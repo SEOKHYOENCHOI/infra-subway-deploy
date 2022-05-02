@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function startup() {
+  echo startupa
   pull_repository
   build_gradle
   run_java

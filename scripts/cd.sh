@@ -3,12 +3,6 @@
 function kill_java_process() {
   PIDS=$(pgrep java)
 
-  if [[ "${#PIDS[@]}" -lt 1 ]] || [[ -z "${PIDS[0]}" ]]
-  then
-    echo -e "There's No Java Process"
-    exit 0
-  fi
-
   for PID in "${PIDS[@]}"
   do
     if [[ -n "${PIDS[0]}" ]]
@@ -28,7 +22,9 @@ function deploy_if_changed() {
     exit 0
   fi
 
+
   kill_java_process
+  echo start
   ./startup.sh "${@}"
 }
 
