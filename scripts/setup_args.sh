@@ -13,7 +13,6 @@ function parse_arguments() {
 }
 
 function set_default_if_empty() {
-
   for i in "$@"
   do
     KEY=$(echo "${i%,*}" | cut -f1 -d=)

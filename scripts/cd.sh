@@ -3,8 +3,6 @@
 function kill_java_process() {
   PIDS=$(pgrep java)
 
-  echo ${#PIDS[@]}
-
   if [[ "${#PIDS[@]}" -lt 1 ]] || [[ -z "${PIDS[0]}" ]]
   then
     echo -e "There's No Java Process"
